@@ -1,0 +1,34 @@
+﻿<Window x:Class="ChecklistReview.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Check List" Height="312.074" Width="525">
+    <Grid Margin="0,0,-8,-6">
+        <Button Content="Master List" HorizontalAlignment="Left" Height="42" Margin="302,77,0,0" VerticalAlignment="Top" Width="113" Click="MasterClick"/>
+        <Button Content="New" HorizontalAlignment="Left" Height="42" Margin="122,77,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click"/>
+        <Button x:Name="GoButton" Content="Go" HorizontalAlignment="Left" Height="37" Margin="245,27,0,0" VerticalAlignment="Top" Width="75" Visibility="Hidden" Click="GoButton_Click"/>
+        <CheckBox x:Name="checkBoxPoly" Content="Poly" HorizontalAlignment="Left" Height="20" Margin="242,134,0,0" VerticalAlignment="Top" Width="78" IsChecked="True"/>
+        <CheckBox x:Name="checkBoxPQuotes" Content="Poly Quotes" HorizontalAlignment="Left" Height="20" Margin="325,134,0,0" VerticalAlignment="Top" Width="78" IsChecked="True"/>
+        <CheckBox x:Name="checkBoxCB" Content="Cardboard" HorizontalAlignment="Left" Height="20" Margin="408,134,0,0" VerticalAlignment="Top" Width="78" IsChecked="True"/>
+        <CheckBox x:Name="checkBoxFrame" Content="Frame" HorizontalAlignment="Left" Height="20" Margin="242,154,0,0" VerticalAlignment="Top" Width="78" RenderTransformOrigin="3.315,0.665" IsChecked="True"/>
+        <CheckBox x:Name="checkBoxPattern" Content="Pattern" HorizontalAlignment="Left" Height="20" Margin="325,154,0,0" VerticalAlignment="Top" Width="78" IsChecked="True"/>
+        <CheckBox x:Name="checkBoxLayouts" Content="Layouts" HorizontalAlignment="Left" Height="20" Margin="408,154,0,0" VerticalAlignment="Top" Width="78" IsChecked="True"/>
+        <CheckBox x:Name="checkBoxSewing" Content="Sewing" HorizontalAlignment="Left" Height="20" Margin="242,174,0,0" VerticalAlignment="Top" Width="78" IsChecked="True"/>
+        <CheckBox x:Name="checkBoxUphol" Content="Upholstery" HorizontalAlignment="Left" Height="20" Margin="325,174,0,0" VerticalAlignment="Top" Width="78" IsChecked="True"/>
+        <CheckBox x:Name="checkBoxProdInfo" Content="Style Collection" HorizontalAlignment="Left" Height="20" Margin="408,174,0,0" VerticalAlignment="Top" Width="104" IsChecked="True"/>
+        <CheckBox x:Name="checkBoxDims" Content="Dimensions" HorizontalAlignment="Left" Height="20" Margin="242,193,0,0" VerticalAlignment="Top" Width="87" RenderTransformOrigin="3.315,0.665" IsChecked="True"/>
+        <CheckBox x:Name="checkBoxWeights" Content="Weights" HorizontalAlignment="Left" Height="20" Margin="325,194,0,0" VerticalAlignment="Top" Width="78" IsChecked="True"/>
+        <CheckBox x:Name="checkBoxCartoning" Content="Cartoning" HorizontalAlignment="Left" Height="20" Margin="408,194,0,0" VerticalAlignment="Top" Width="78" IsChecked="True"/>
+        <CheckBox x:Name="checkBoxPhotos" Content="Photos" HorizontalAlignment="Left" Height="20" Margin="242,213,0,0" VerticalAlignment="Top" Width="78" IsChecked="True"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" Margin="7,133,290,14">
+            <ItemsControl Name="displayList" Width="199"  >
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+        <TextBox x:Name="insertStyleId" HorizontalAlignment="Left" Height="23" Margin="21,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="189"/>
+        <Button Content="Import" HorizontalAlignment="Left" Height="21" Margin="21,98,0,0" VerticalAlignment="Top" Width="68" Click="Import_Click"/>
+    </Grid>
+</Window>

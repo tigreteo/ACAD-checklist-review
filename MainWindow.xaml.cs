@@ -15,7 +15,7 @@ namespace ChecklistReview
     {
         public List<string> styleFolders = new List<string>();
         public List<string> foldernames = new List<string>();
-        public IEnumerable<FileInfo> masterList = new DirectoryInfo(@"Y:\Product Development\Style Specifications").GetFiles("*.*", SearchOption.AllDirectories);
+        public IEnumerable<FileInfo> masterList = new DirectoryInfo(@"DRIVE LOC:\Product Development\Style Specifications").GetFiles("*.*", SearchOption.AllDirectories);
 
         //TODO
         //be able to add styleIDs that dont have specs in product & development
@@ -33,7 +33,7 @@ namespace ChecklistReview
         {
             //get file location of excel file to read from
             var dialog = new OpenFileDialog();
-            dialog.InitialDirectory = @"C:\Users\thenderson\Desktop";
+            dialog.InitialDirectory = @"C:\Users\USER\Desktop";
             dialog.Filter = "excel files (*.xlsx)| *.xlsx|All files (*.*)| *.*";
             dialog.FilterIndex = 2;
             dialog.RestoreDirectory = true;
@@ -50,7 +50,7 @@ namespace ChecklistReview
                 {
                     //assume it is in @"Y:\Product Development\Style Specifications" but not testfolder
                     //use linq to find folders matching that description
-                    string testFile = findFolder(@"Y:\Product Development\Style Specifications", id);
+                    string testFile = findFolder(@"DRIVE LOC:\Product Development\Style Specifications", id);
 
                     //add the folder to the list
                     if (Directory.Exists(testFile))
@@ -89,7 +89,7 @@ namespace ChecklistReview
                 //if the field for styleID was blank
                 //request a folder to search through
                 var dialog = new FolderBrowserDialog();
-                dialog.SelectedPath = @"Y:\Product Development\Style Specifications";
+                dialog.SelectedPath = @"DRIVE LOC:\Product Development\Style Specifications";
                 dialog.ShowDialog();
 
                 //add the folder to the list
@@ -99,10 +99,10 @@ namespace ChecklistReview
             }
             else
             {
-                //assume it is in @"Y:\Product Development\Style Specifications" but not testfolder
+                //assume it is in "Product Development\Style Specifications" but not testfolder
                 //use linq to find folders matching that description
-                testString = findFolder(@"Y:\Product Development\Style Specifications", testString);
-                //testString = findFolder(@"Y:\Product Development\Style Specifications\800-899\801", testString);
+                testString = findFolder(@"DRIVE LOC:\Product Development\Style Specifications", testString);
+                
 
                 // if this string cannot yield a styleID then return user and delete style ID
                 if (testString == "")

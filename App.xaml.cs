@@ -28,7 +28,7 @@ namespace ChecklistReview
             //Styles and Dim file location
             // @"Y:\Customer Documents\Style Info\Styles and Dimensions.XLS"
             //CSV file location vvvvvvvvvvvvvvv
-            string csvFile = @"Y:\Product Development\Standards\Layouts List.csv";
+            string csvFile = @"DRIVE LOC:\Product Development\Standards\Layouts List.csv";
             IEnumerable<FileInfo> fileQuery = null;
 
             //VVv The below code creates a list of all fileInfos of anything they may qualify as a spec inside the search folder(s)
@@ -36,7 +36,7 @@ namespace ChecklistReview
 
             //if no list of locations to search exists, then default to hardcoded master file location
             if (searchFiles == null)
-            { fileQuery = LINQ(@"Y:\Product Development\Style Specifications"); }
+            { fileQuery = LINQ(@"DRIVE LOC:\Product Development\Style Specifications"); }
             else
             {
                 //otherwise loop through folder locations
@@ -413,7 +413,7 @@ namespace ChecklistReview
         {
             //open up the file so it only has to be loaded once, close when finished
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-            Workbook wb = xlApp.Workbooks.Open(@"Y:\Customers\Style Info\Styles and Dimensions.XLS", null, true);
+            Workbook wb = xlApp.Workbooks.Open(@"DRIVE LOC:\Customers\Style Info\Styles and Dimensions.XLS", null, true);
             Worksheet ws = (Worksheet)wb.Worksheets[1];
 
             foreach(DataRow row in table.Rows)
